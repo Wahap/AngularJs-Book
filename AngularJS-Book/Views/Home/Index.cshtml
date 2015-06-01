@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div ng-controller="HomeCtrl">
+    {{ greeting }} wapper
+
+
+    <div>
+        <input ng-model="greeting" />
+    </div>
+    <input type="button" class="btnGreen" value="Save" ng-click="ChangeGreeting(greeting)" />
+</div>
+------------------------------------------------------------------------------------------
+<div ng-controller="CartCntrl">
+  
+    <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+    <hr>
+    <div ng-show="isCollapsed">
+        <table>
+            <tr ng-repeat="item in items">
+                <td>
+                    <span>{{item.title}}</span>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-info" ng-click="remove($index)">Remove</button>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
