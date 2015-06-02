@@ -18,17 +18,22 @@
     <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
     <hr>
     <div ng-show="isCollapsed">
-        <table>
-            <tr ng-repeat="item in items">
-                <td>
-                    <span>{{item.title}}</span>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-sm btn-info" ng-click="remove($index)">Remove</button>
-                </td>
-
-            </tr>
-        </table>
+       
+                  
+           
+                
+       
+            <div ng-repeat="item in items">
+                <span>{{item.title}}</span>
+                <input ng-model="item.quantity">
+                <span>{{item.price | currency}}</span>
+                <span>{{item.price * item.quantity | currency}}</span>
+            </div>
+            <div>Total: {{totalCart() | currency}}</div>
+            <div>Discount: {{bill.discount | currency}}</div>
+            <div>Subtotal: {{subtotal() | currency}}</div>
+             <div>Subtotal2: {{subtotal2}}</div>
+        <button type="button" class="btn btn-sm btn-info" ng-click="buttonClicked()">Remove</button>
     </div>
 
 </div>
